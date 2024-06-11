@@ -1,0 +1,17 @@
+{
+  "name": "native-addon",
+  "version": "1.0.0",
+  "description": "addon for electronjs without webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "author": "oazambranoa",
+  "license": "ISC",
+  "gypfile": true,
+  "devDependencies": {
+    "nan": "^2.19.0",
+    "node-gyp": "^10.1.0"
+  }
+}
