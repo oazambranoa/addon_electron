@@ -6,7 +6,13 @@ app.allowRendererProcessReuse = false; // Añade esta línea
 const addon = require("./libs/h5/h5addon")
 
 var files_path = [];
-files_path.push("C:/Users/JPablo/Documents/RAW DATA/M00/DOSS_20231003T000002_000000Z.h5")
+
+// files_path.push("C:/Users/JPablo/Documents/RAW DATA/M00/DOSS_20231003T000002_000000Z.h5")
+// C:/Users/JPablo/Documents/RAW DATA/M00/DOSS_20231003T000000_000000Z.h5
+
+ipcMain.on("file-path", (event, path) => {
+    files_path = [path]
+});
 
 BandsFBE = [
     {

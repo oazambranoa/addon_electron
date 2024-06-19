@@ -18,6 +18,18 @@
     <p>
         Command used to rebuild the addon: <code> node-gyp rebuild --target=31.0.0 --arch=x64 --dist-url=https://electronjs.org/headers </code>
     </p>
+
+    <p> Primero se deberá introducir la ruta del archivo en este formato: 
+
+        <p>C:/Users/JPablo/Documents/RAW DATA/M00/DOSS_20231003T000002_000000Z.h5</p>
+
+        Luego se da click en "Add the file Path" y por utilmo en "Click me Addon!"
+        para que procese el archivo, imprimiendo en el psd_channels_out[0].length
+        del archivo.
+    </p>
+
+    <input type="text" id="filePathInput" placeholder="Enter the file path">
+    <button id="submitFilePathButton">Add the file Path</button>
         <button id="testAddonButton"> Click me Addon! </button>
         <p id="addon-output"></p>
     <script src="renderer.js"></script>
