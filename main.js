@@ -3,10 +3,28 @@ const path = require('node:path')
 
 app.allowRendererProcessReuse = false; // Añade esta línea
 
-const addon = require("./libs/addon")
+const addon = require("./libs/h5/h5addon")
+
+var files_path = [];
+files_path.push("C:/Users/JPablo/Documents/RAW DATA/M00/DOSS_20231003T000002_000000Z.h5")
+
+BandsFBE = [
+    {
+        start: 781.25, 
+        end: 937.50
+    }
+]
+
+ParamsPSD = {
+    Nfft: 16384, 
+    Overl: 0.5,
+    MaxSec: 10.0
+}
+
+
 
 ipcMain.handle('generate-text', async (event) => {
-    return addon.generateText();
+    return addon.processH5(files_path, ParamsPSD, BandsFBE).psd_channels_out[0].length;
 });
 
 function createWindow () {
